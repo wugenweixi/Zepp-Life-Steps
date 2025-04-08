@@ -32,7 +32,7 @@
 
 ### Web 版本
 
-1. 访问我们的网站 [stops.luozhinet.com](https://stops.luozhinet.com)
+1. 访问我们的网站 [zepp-life-steps.vercel.app](https://zepp-life-steps.vercel.app)
 2. 输入您的 Zepp Life 账号和密码
 3. 设置您想要的步数
 4. 点击提交，等待同步完成

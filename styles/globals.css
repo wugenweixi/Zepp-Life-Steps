@@ -1,210 +1,290 @@
-/* 全局样式 */
-:root {
-  --primary-color: #1890ff;
-  --success-color: #52c41a;
-  --warning-color: #faad14;
-  --error-color: #f5222d;
-  --font-size-base: 14px;
-  --heading-color: rgba(0, 0, 0, 0.85);
-  --text-color: rgba(0, 0, 0, 0.65);
-  --text-color-secondary: rgba(0, 0, 0, 0.45);
-  --disabled-color: rgba(0, 0, 0, 0.25);
-  --border-radius-base: 4px;
-  --border-color-base: #d9d9d9;
-  --box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --background-color-base: #f0f2f5;
-  --card-background: #fff;
-  --glass-background: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-/* 暗黑模式变量 */
-.dark-mode {
-  --primary-color: #177ddc;
-  --success-color: #49aa19;
-  --warning-color: #d89614;
-  --error-color: #d32029;
-  --heading-color: rgba(255, 255, 255, 0.85);
-  --text-color: rgba(255, 255, 255, 0.65);
-  --text-color-secondary: rgba(255, 255, 255, 0.45);
-  --disabled-color: rgba(255, 255, 255, 0.25);
-  --border-color-base: #434343;
-  --box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.45);
-  --background-color-base: #141414;
-  --card-background: #1f1f1f;
-  --glass-background: rgba(31, 31, 31, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+  color: #fff;
 }
 
-.dark-mode body {
-  background: linear-gradient(135deg, #1a1c2c 0%, #2a1b3d 100%);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
 }
 
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* 应用容器 */
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.content-wrapper {
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* 玻璃卡片效果 */
+/* Glassmorphism 样式 */
 .glass-card {
-  background: var(--glass-background) !important;
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border) !important;
-  box-shadow: var(--glass-shadow) !important;
-  border-radius: 16px !important;
-  overflow: hidden;
-  padding: 24px !important;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 20px;
+  color: #fff;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+}
+
+.glass-input:hover, .glass-input:focus {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px);
 }
 
 .glass-title {
-  color: var(--heading-color) !important;
-  margin-bottom: 24px !important;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
   text-align: center;
-}
-
-.glass-input, .glass-select {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid var(--glass-border) !important;
-  border-radius: 8px !important;
-  color: var(--text-color) !important;
-}
-
-.glass-input:hover, .glass-select:hover {
-  border-color: var(--primary-color) !important;
-}
-
-.glass-input:focus, .glass-select:focus {
-  border-color: var(--primary-color) !important;
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
-}
-
-.glass-button, .submit-button {
-  height: 40px !important;
-  border-radius: 8px !important;
-  font-weight: 500 !important;
-  transition: all 0.3s !important;
-}
-
-.random-button {
-  height: 40px !important;
-  border-radius: 8px !important;
-  font-weight: 500 !important;
-  transition: all 0.3s !important;
-  background: var(--glass-background) !important;
-  border: 1px solid var(--glass-border) !important;
-  color: var(--text-color) !important;
-}
-
-.random-button:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border-color: var(--primary-color) !important;
-  color: var(--primary-color) !important;
 }
 
 .glass-footer {
-  margin-top: 24px;
   text-align: center;
-  color: var(--text-color-secondary);
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+} 
+
+.app-container {
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* 卡片头部 */
-.card-header {
+.dark-mode {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.glass-card {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .glass-card {
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+.glass-title {
+  text-align: center;
+  margin-bottom: 8px !important;
+}
+
+.glass-subtitle {
+  text-align: center;
+  margin-bottom: 24px !important;
+}
+
+.glass-input {
+  border-radius: 8px;
+}
+
+.glass-button {
+  border-radius: 8px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.glass-footer {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.last-update-container {
+  margin-top: 24px;
+}
+
+.app-container {
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-mode {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  padding: 16px 24px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.dark-mode .app-header {
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .header-actions {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 16px;
 }
 
-/* 步数滑块 */
-.steps-slider {
-  margin: 16px 0;
+.app-content {
+  flex: 1;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  width: 100%;
 }
 
-/* 提示部分 */
-.tips-section {
-  margin-top: 24px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.05);
+.glass-card {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .glass-card {
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.glass-title {
+  margin-bottom: 8px !important;
+}
+
+.glass-subtitle {
+  margin-bottom: 24px !important;
+}
+
+.glass-input {
   border-radius: 8px;
 }
 
-.tips-section h4 {
-  color: var(--heading-color);
+.glass-button {
+  border-radius: 8px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.dark-mode .app-footer {
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+.success-alert {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 400px;
+}
+
+.steps-form {
+  margin-top: 24px;
+}
+
+.last-update-container {
+  margin-top: 24px;
+}
+
+.history-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.help-content, .settings-content {
+  padding: 0 16px;
+}
+
+.help-content h3, .settings-content h3 {
+  margin-top: 16px;
   margin-bottom: 16px;
 }
 
-.tips-section p {
-  margin-bottom: 8px;
-  color: var(--text-color);
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-/* 历史记录 */
-.empty-history {
+.about-content {
   text-align: center;
-  padding: 40px 0;
+  padding: 0 16px;
 }
 
-/* 响应式调整 */
-@media (max-width: 576px) {
-  .content-wrapper {
-    padding: 0 16px;
-  }
-  
-  .glass-card {
-    padding: 16px !important;
-  }
-  
-  .card-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .header-actions {
-    margin-top: 16px;
-  }
-} 
+.about-logo {
+  margin-bottom: 24px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.qrcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
