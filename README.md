@@ -10,7 +10,7 @@
 
 ## 📱 在线体验
 
-- [Web 版本](https://zepp-life-steps.vercel.app)
+- [Web 版本](https://steps.luozhinet.com)
 - 微信小程序：扫描下方二维码
 
 ## ✨ 功能特点
