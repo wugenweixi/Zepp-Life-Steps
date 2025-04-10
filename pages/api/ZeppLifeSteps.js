@@ -21,6 +21,20 @@ async function login(account, password) {
     // 判断是手机号还是邮箱
     const isPhone = /^\+?\d+$/.test(account);
     console.log('登录账号类型:', isPhone ? '手机号' : '邮箱');
+    
+    // 对于手机号，检查是否有+86前缀，如果没有则添加
+    if (isPhone) {
+      // 检查是否已经有+86前缀
+      if (!account.startsWith('+86') && !account.startsWith('86')) {
+        // 没有86前缀，添加+86
+        account = '+86' + account;
+      } else if (account.startsWith('86') && !account.startsWith('+')) {
+        // 有86但没有+号，添加+号
+        account = '+' + account;
+      }
+      console.log('处理后的手机号:', account);
+    }
+    
     console.log('登录账号:', account);
 
     // 第一步：获取access code
