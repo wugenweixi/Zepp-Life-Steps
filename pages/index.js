@@ -648,7 +648,7 @@ const Home = () => {
       >
         <div className="qrcode-container">
           <img 
-            src="https://cdn.jsdelivr.net/gh/miloce/Zepp-Life-Steps/img/MiniProgramCode.png" 
+            src="https://jsdelivr.luozhinet.com/gh/miloce/Zepp-Life-Steps/img/MiniProgramCode.png" 
             alt="微信小程序二维码" 
             className="qrcode-image"
           />
