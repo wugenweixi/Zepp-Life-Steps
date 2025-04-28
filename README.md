@@ -104,3 +104,8 @@ npm run dev
 ## 📄 许可证
 
 本项目采用 MIT 许可证。详情请参阅 [LICENSE](LICENSE) 文件。
+
+##赞赏
+---
+如果你喜欢我的作品，请给予一些支持！
+![image.png](https://jsdelivr.luozhinet.com/gh/miloce/Zepp-Life-Steps/img/wxzsm.png)
