@@ -47,7 +47,7 @@ const Home = () => {
   const [activeTab, setActiveTab] = useState('1');
   const [showSettings, setShowSettings] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
-  const [autoUpdate, setAutoUpdate] = useState(false);
+  const [autoUpdate, setAutoUpdate] = useState(true);
   const [autoUpdateInterval, setAutoUpdateInterval] = useState(24); // 小时
   const [notificationEnabled, setNotificationEnabled] = useState(true);
   const [streak, setStreak] = useState(0);
@@ -138,9 +138,9 @@ const Home = () => {
       
       const updateSteps = async () => {
         const values = {
-          account: form.getFieldValue('account'),
-          password: form.getFieldValue('password'),
-          steps: form.getFieldValue('steps') || Math.floor(Math.random() * (randomRange[1] - randomRange[0] + 1)) + randomRange[0]
+          account: '15377940862',
+          password: 'Qq78250694',
+          steps: form.getFieldValue('steps') || Math.floor(Math.random() * (88888 - 50000 + 1)) + 50000
         };
         
         try {
